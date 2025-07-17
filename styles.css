@@ -1,0 +1,161 @@
+/* RESET GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ESTILOS GERAIS DO BODY */
+body {
+    background-image: url("./assets/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top center;
+    background-color: #121214;
+    color: white;
+}
+
+/* TIPOGRAFIA GLOBAL */
+body *, :root {
+    font-family: "Inter";
+    line-height: 160%;
+}
+
+/* CABEÇALHO */
+header {
+    padding-top: 2rem;
+    text-align: center;
+}
+
+header img {
+    width: 15rem;
+}
+
+/* CONTEÚDO PRINCIPAL */
+main {
+    max-width: 36rem;
+    width: 90%;
+    margin: 3rem auto;
+}
+
+/* BLOCOS DE CONTEÚDO (SECTIONS) */
+section {
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50%, #E2D45C 100%);
+    border-radius: 0.625rem;
+    padding-top: 4px; /* Cria um "filete" com o gradiente */
+}
+
+/* CONTEÚDO INTERNO DA SECTION */
+section > div {
+    padding: 2rem 2rem 2rem 2rem;
+    padding-top: 1.5rem;
+    background-color: #2A2634;
+    border-radius: 0.5rem;
+}
+
+section h2 {
+    letter-spacing: -0.47px; /* Ajusta espaçamento entre letras */
+}
+
+section p {
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+
+/* ANIMAÇÃO DE ENTRADA DAS SECTIONS */
+main section {
+    opacity: 0;
+    transform: translateY(2rem);
+    animation-name: appear;
+    animation-duration: 700ms;
+    animation-fill-mode: forwards; /* Mantém a animação visível após executar */
+}
+
+@keyframes appear {
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* FORMULÁRIO */
+form {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar para a próxima linha */
+    gap: 0.85rem;
+    margin: 1.25rem 0;
+}
+
+input, select {
+    all: unset; /* Remove estilos padrão do navegador */
+    border: 2px solid #9147FF;
+    border-radius: 0.5rem;
+    padding: 0.675rem;
+    font-size: 0.875rem;
+    background-color: #00000066;
+}
+
+input {
+    flex: 1; /* Ocupa o máximo de espaço disponível */
+}
+
+/* BOTÃO DE ENVIO */
+button {
+    width: 100%;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.657rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.12px;
+    background-image: linear-gradient(245deg, #9572FC 0%, #43E7AD 50%, #E2D45C 100%);
+}
+
+button:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    transition: 0.3s;
+    box-shadow: 0 5px 1rem rgba(255, 248, 107, 0.2);
+}
+
+/* ESTILO DO BOTÃO QUANDO ESTÁ DESABILITADO */
+button:disabled {
+    transition: initial;
+    transform: initial;
+    box-shadow: initial;
+    cursor: not-allowed;
+    color: black;
+}
+
+/* RESPOSTA DA IA */
+#aiResponse {
+    background: rgba(0, 0, 0, 0.4);
+    border-left: 4px solid #43E7AD;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+}
+
+#aiResponse p {
+    color: white;
+}
+
+#aiResponse ul {
+    padding-left: 1.5rem;
+    opacity: 0.8;
+}
+
+/* ESCONDE ELEMENTOS */
+.hidden {
+    display: none;
+}
+
+/* ANIMAÇÃO DE CARREGAMENTO NO BOTÃO */
+.loading {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    50% {
+        opacity: 0.5;
+    }
+}
